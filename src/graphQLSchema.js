@@ -11,19 +11,22 @@ import {
 } from './sysVentas/clientes/typeDefs';
 
 import clienteResolvers from './sysVentas/clientes/resolvers';
+import {invoiceMutations, invoiceQueries, invoiceTypeDef} from "./sysVentas/facturacion/typeDefs";
 
 // merge the typeDefs
 const mergedTypeDefs = mergeSchemas(
 	[
 		'scalar JSON',
-		clienteTypeDef
-		
+		clienteTypeDef,
+		invoiceTypeDef
 	],
 	[
-		clienteQueries
+		clienteQueries,
+		invoiceQueries
 	],
 	[
-		clienteMutations
+		clienteMutations,
+		invoiceMutations
 	]
 );
 
@@ -32,6 +35,7 @@ export default makeExecutableSchema({
 	typeDefs: mergedTypeDefs,
 	resolvers: merge(
 		{ JSON: GraphQLJSON }, // allows scalar JSON
-		clienteResolvers
+		clienteResolvers,
+		invoiceMutations
 	)
 });
