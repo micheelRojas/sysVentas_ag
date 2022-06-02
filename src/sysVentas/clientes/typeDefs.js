@@ -9,6 +9,7 @@ export const clienteTypeDef = `
       correo: String!
       telefono: String!
       direccion: String!
+      estado: String!
   }
   type ClienteResponse {
    cliente:Cliente!
@@ -30,6 +31,8 @@ export const clienteTypeDef = `
 export const clienteQueries = `
       allClientes: [Cliente]!
       clienteById(id: Int!): Cliente!
+      allClientesActivos: [Cliente]!
+      allClientesInactivos: [Cliente]!
   `;
 
 export const clienteMutations = `

@@ -6,9 +6,13 @@ const URL = `http://${url}:${port}/${entryPoint}`;
 const resolvers = {
 	Query: {
 		allClientes: (_) =>
-			getRequest(`${URL}/${"list"}`, ''),
+			getRequest(`${URL}/list`, ''),
 		clienteById: (_, { id }) =>
-			generalRequest(`${URL}/${id}`, 'GET'),
+			generalRequest(`${URL}/?id=${id}`, 'GET'),
+		allClientesActivos: (_) =>
+			getRequest(`${URL}/listActivos`, ''),
+		allClientesInactivos: (_) =>
+			getRequest(`${URL}/listInactivos`, ''),
 	},
 	Mutation: {
 		createCliente: (_, { cliente }) =>
