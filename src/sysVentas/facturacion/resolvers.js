@@ -3,7 +3,7 @@ import { url, port, entryPoint } from './server';
 
 const URL = `http://${url}:${port}/${entryPoint}`;
 
-const resolvers = {
+const invoiceResolvers = {
 	Query: {
 		allInvoices: (_) =>
 			generalRequest(`${URL}`, 'GET'),
@@ -18,4 +18,4 @@ const resolvers = {
 	}
 };
 
-export default resolvers;
+export default invoiceResolvers;

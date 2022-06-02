@@ -12,6 +12,7 @@ import {
 
 import clienteResolvers from './sysVentas/clientes/resolvers';
 import {invoiceMutations, invoiceQueries, invoiceTypeDef} from "./sysVentas/facturacion/typeDefs";
+import invoiceResolvers from "./sysVentas/facturacion/resolvers";
 
 // merge the typeDefs
 const mergedTypeDefs = mergeSchemas(
@@ -36,6 +37,6 @@ export default makeExecutableSchema({
 	resolvers: merge(
 		{ JSON: GraphQLJSON }, // allows scalar JSON
 		clienteResolvers,
-		invoiceMutations
+		invoiceResolvers
 	)
 });

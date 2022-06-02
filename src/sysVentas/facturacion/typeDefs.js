@@ -2,7 +2,7 @@ export const invoiceTypeDef = `
   type Invoice {
       id: Int!
       clientId: Int!
-      date: Date!
+      date: String!
       status: String!
       total: Float!
       details: [InvoiceDetail]!
@@ -23,7 +23,7 @@ export const invoiceTypeDef = `
   }
   input InvoiceInput {
       clientId: Int!
-      date: Date!
+      date: String!
       details: [InvoiceDetailInput]!
   }
 `;
