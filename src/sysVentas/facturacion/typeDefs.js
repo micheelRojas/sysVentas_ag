@@ -16,6 +16,9 @@ export const invoiceTypeDef = `
   type InvoiceResponse {
      message:String!
   }
+  type InvoiceQueryResponse {
+     invoices:[Invoice]!
+  }
   input InvoiceDetailInput {
       productId: Int!  
       quantity: Float!

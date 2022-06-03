@@ -13,8 +13,8 @@ const invoiceResolvers = {
 	Mutation: {
 		createInvoice: (_, { invoice }) =>
 			generalRequest(`${URL}`,'POST', invoice),
-		cancelInvoice: (_, { idInvoice }) =>
-			generalRequest(`${URL}/${idInvoice}/canceled`, 'PUT')
+		cancelInvoice: (_, { id}) =>
+			generalRequest(`${URL}/${id}/canceled`, 'PUT')
 	}
 };
 

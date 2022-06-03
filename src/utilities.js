@@ -21,10 +21,13 @@ export async function generalRequest(url, method, body, fullResponse) {
 		// eslint-disable-next-line
 		console.log(url);
 	}
+	console.log(parameters);
+	debugger;
 
 	try {
 		return await request(parameters);
 	} catch (err) {
+		debugger;
 		return err;
 	}
 }
