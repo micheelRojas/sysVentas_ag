@@ -1,27 +1,31 @@
 export const productoTypeDef = `
   type Producto {
       id: Int!
-      nombre: String!
-      descripcion: String!
-      unidad: String!
-      cantidad: Int!
-      precio: Int!
-      categoria: String!
+      name: String!
+      code: String!
+      amount: Int!
+      price: Int!
+      categoryId: Int!
+      category: Category!
+      status: String!
+      createdAt: String!
+      date: String!
   }
   type ProductoResponse {
-   producto:Producto!
-   result: String!
-	 error:String!
-   message:String!
-}
+    message: String!
+ }
+  type Category {
+    name: String!
+    code: String!
+    date: String!
+  }
   input ProductoInput {
-    id: Int!
-    nombre: String!
-    descripcion: String!
-    unidad: String!
-    cantidad: Int!
-    precio: Int!
-    categoria: String!
+    name: String!
+    code: String!
+    date: String!
+    amount: Int!
+    price: Int!
+    categoryId: Int!
   }`;
 
 export const productoQueries = `
@@ -30,6 +34,6 @@ export const productoQueries = `
   `;
 
 export const productoMutations = `
-    createProducto(producto: ProductoInput!): Producto!
-    updateProducto(id: Int!, producto: ProductoInput!): Producto!
+    createProducto(producto: ProductoInput!): ProductoResponse!
+    updateProducto(id: Int!, producto: ProductoInput!): ProductoResponse!
 `;
