@@ -24,7 +24,8 @@ export async function generalRequest(url, method, body, fullResponse) {
     try {
         return await request(parameters);
     } catch (e) {
-        return e.error;
+        console.log(e);
+        return e.error || e.body;
     }
 }
 
