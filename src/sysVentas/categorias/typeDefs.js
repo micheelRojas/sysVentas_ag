@@ -6,13 +6,18 @@ export const categoryTypeDef = `
       date: String!
   }
   type CategoryResponse {
+   categories: [Category]! 
    result: Category! 
 }
   input CategoryInput {
     name: String!
     code: String!
     date: String!
-  }`;
+  }
+  type GetCategoryResponse{
+    result:CategoryResponse!
+  }
+  `;
 
 export const categoryQueries = `
       allCategories:[Category]!
