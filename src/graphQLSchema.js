@@ -16,10 +16,20 @@ import {
 	categoryTypeDef
 } from './sysVentas/categorias/typeDefs';
 import categoryResolvers from './sysVentas/categorias/resolvers';
+import {
+	productoMutations,
+	productoQueries,
+	productoTypeDef
+} from './sysVentas/productos/typeDefs';
 
 import clienteResolvers from './sysVentas/clientes/resolvers';
+import productoResolvers from './sysVentas/productos/resolvers';
 import {invoiceMutations, invoiceQueries, invoiceTypeDef} from "./sysVentas/facturacion/typeDefs";
 import invoiceResolvers from "./sysVentas/facturacion/resolvers";
+import authResolvers from "./sysVentas/authentication/resolvers";
+import {authMutations, authTypeDef} from "./sysVentas/authentication/typeDefs";
+
+
 
 import clienteResolvers from './sysVentas/clientes/resolvers';
 import categoryResolvers from './sysVentas/categorias/resolvers';
@@ -30,17 +40,22 @@ const mergedTypeDefs = mergeSchemas(
 		'scalar JSON',
 		clienteTypeDef,
 		invoiceTypeDef,
-		categoryTypeDef
+		categoryTypeDef,
+		productoTypeDef,
+		authTypeDef
 	],
 	[
 		clienteQueries,
 		invoiceQueries,
-		categoryQueries
+		categoryQueries,
+		productoQueries
 	],
 	[
 		clienteMutations,
 		invoiceMutations,
-		categoryMutations
+		categoryMutations,
+		productoMutations,
+		authMutations
 	]
 );
 
@@ -51,6 +66,8 @@ export default makeExecutableSchema({
 		{ JSON: GraphQLJSON }, // allows scalar JSON
 		clienteResolvers,
 		invoiceResolvers,
-		categoryResolvers
+		categoryResolvers,
+		productoResolvers,
+		authResolvers
 	)
 });
