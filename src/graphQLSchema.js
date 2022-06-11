@@ -29,9 +29,6 @@ import invoiceResolvers from "./sysVentas/facturacion/resolvers";
 import authResolvers from "./sysVentas/authentication/resolvers";
 import {authMutations, authTypeDef} from "./sysVentas/authentication/typeDefs";
 
-
-
-import clienteResolvers from './sysVentas/clientes/resolvers';
 import categoryResolvers from './sysVentas/categorias/resolvers';
 
 // merge the typeDefs
