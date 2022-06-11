@@ -12,7 +12,7 @@ export const clienteTypeDef = `
       estado: String!
   }
   type ClienteResponse {
-   cliente:Cliente!
+   cliente:Cliente
    result: String!
 	 error:String!
    message:String!

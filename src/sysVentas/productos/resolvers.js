@@ -6,15 +6,15 @@ const URL = `http://${url}:${port}/${entryPoint}`;
 const resolvers = {
 	Query: {
 		allProductos: (_) =>
-			getRequest(`${URL}/list`, ''),
-		productoById: (_, { id }) =>
-			generalRequest(`${URL}/?id=${id}`, 'GET'),
+			getRequest(`${URL}/all-products`, ''),
+		// productoById: (_, { id }) =>
+		// 	generalRequest(`${URL}/?id=${id}`, 'GET'),
 	},
 	Mutation: {
 		createProducto: (_, { producto }) =>
-			generalRequest(`${URL}/add`,'POST', producto),
+			generalRequest(`${URL}`,'POST', producto),
 		updateProducto: (_, { id, producto }) =>
-			generalRequest(`${URL}/update?id=${id}`, 'PUT', producto),
+			generalRequest(`${URL}`, 'PUT', producto),
 	}
 };
 
